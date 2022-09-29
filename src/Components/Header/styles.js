@@ -35,14 +35,14 @@ const HeaderContainer = styled.header `
 
         &::after{ 
             content: ''; 
-            display: inline-block; 
+            display: block; 
             width: 1.4rem; 
             height: 1.7rem; 
-            background:  url('../assets/usuario.svg') no-repeat center center ; 
+            background: url('src/assets/user.svg') ; 
             margin-left: .5rem; 
             position: relative; 
             top: -1px;  
-            z-index: 10 ;
+            z-index: 10;
 
         }
     }

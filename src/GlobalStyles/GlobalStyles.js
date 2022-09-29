@@ -22,7 +22,7 @@ export const GlobalStyles = createGlobalStyle`
         --type-first: Helvetica, Arial, sans-serif;  
         --type-second: 'Spectral', Georgia; 
         
-        font-size: 62.5%; 
+            font-size: 62.5%; 
     }
 
     body{ 
