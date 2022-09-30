@@ -3,7 +3,8 @@ import {HeaderContainer} from './styles';
 import {Link} from 'react-router-dom';   
 import MyDogs from '../../assets/dogs.svg';  
 
-export const Header = () => {
+
+export  const Header = () => {
 
   return (
     <HeaderContainer>

@@ -2,18 +2,10 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import {Input} from '../../Forms/Input'
 import {Button} from '../../Forms/Button';
-export const LoginForm = () => {
-  
-  const [user, setUser] = useState({ 
-    nome: '',  
-    password: ''
-  
-  }) 
 
-  function handleChange(e){ 
-    setUser({...user, [e.target.id]: e.target.value}) 
-    console.log(user)
-  }  
+export const LoginForm = () => {
+
+ 
 
   const handleSubmit = (e) =>  { 
     e.preventDefault();  
@@ -24,14 +16,13 @@ export const LoginForm = () => {
         'Content-type': 'application/json'
       } , 
 
-      body: JSON.stringify({...user})
+      body: JSON.stringify()
 
     })
     .then(response => response.json())
     .then(data => console.log(data)) 
 
 
-    setUser({nome: '', password: ''}) 
   }
   return (
     <div>
@@ -39,17 +30,16 @@ export const LoginForm = () => {
       <form onSubmit={handleSubmit}>
           <Input 
             type="text" 
-            value={user.nome} 
-            id="nome" 
-            handleChange={handleChange} 
+             id="nome" 
             label="usuario"
+           
           /> 
           <Input 
             label="Senha"
             type="password" 
-            value={user.password} 
             id="password" 
-            handleChange={handleChange}
+           
+
           /> 
           <Button submit="submit">Entrar</Button>
           
