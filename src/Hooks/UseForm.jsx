@@ -9,21 +9,51 @@ const types = {
 
 }
 
-    function handleChange(e){
+  
+        export const UseForm = (type) => {
+           const [value, setValue] = useState('') 
+           const [error,setError] = useState(null)
+            
+           function handleChange(e){
 
-        setValue({...value, [e.target.id]: e.target.value})
+            if(error) validate(value)
+            setValue(e.target.value)
+    
+            }
+    
+             
 
-    }
+            function validate(value){ 
 
-        export const UseForm = (user, type) => {
-           const [value, setValue] = useState({...user
-        })
-           const [error,setError] = useState()
-           
+                if(type == false) return true; 
+
+                
+                if(value.length == 0){ 
+                    setError('Preencha um valor nesse campo') 
+                    return false; 
+                }else if(types[type] && !types[type].regex.test(value)){
+
+                    setError(types[type].message) 
+                    return false; 
+
+                }else { 
+
+                    setError(null); 
+                    return true; 
+
+                }
+
+
+            }
+
             return{
+                
                 value,
                 setValue, 
-                handleChange
+                handleChange,
+                error,  
+                validate: () => validate(value), 
+                onBlur: () => validate(value)
 
             }
         }
