@@ -1,47 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useContext} from 'react'
 import { Link } from 'react-router-dom'
 import {Input} from '../../Forms/Input'
 import {Button} from '../../Forms/Button'; 
 import { UseForm } from '../../../Hooks/UseForm';
-import { TOKEN_POST } from '../../../Api/api';
-
+import {Global} from '../../../GlobalContext/useContext'; 
 export const LoginForm = () => {
+
   
   const userName = UseForm();   
   const password = UseForm(); 
    
-  useEffect(() => { 
-
-      const token = localStorage.getItem('token'); 
-      if(token){ 
-
-        getUser(token)
-      }
-
-
-  }, [])
-
-
-  async function getUser(token){ 
-    const{url, options} = USER_GET(token)
-    
-    const response = await fetch(url, options); 
-    const data = await response.json(); 
-
-
-  }
+  const {userLogin, error, loading} = useContext(Global)
+ 
+  
  
 
   const handleSubmit = async  (e) =>  { 
     e.preventDefault();  
     if(userName.validate() && password.validate()){ 
+      userLogin(userName.value, password.value)
 
-    
-      const {url, options} = TOKEN_POST({username: userName.value})
-      
-      const response = await fetch(url, options)
-      const data = await response.json(); 
-      console.log(data.token); 
     }
   }
   return (
@@ -61,8 +39,15 @@ export const LoginForm = () => {
             id="password" 
             {...password}
 
-          /> 
-          <Button submit="submit">Entrar</Button>
+          />  
+
+          {loading ? ( 
+              <Button disabled >Carregando... </Button>  
+          ): (
+            <Button submit="submit">Entrar</Button>  
+          )}
+         
+          {error && <p>{error}</p>}
           
       </form>
       <Link to="/login/criar">Cadastro</Link>

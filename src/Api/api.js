@@ -34,4 +34,24 @@ export function USER_GET(token){
             } 
     }
 
-}
+} 
+
+
+export function TOKEN_VALIDADE_POST(token){ 
+
+    return { 
+
+        url: API_URL + '/jwt-auth/v1/token/validate', 
+        options: { 
+            method: 'POST', 
+            headers: { 
+                Authorization: 'Bearer ' + token
+            }, 
+
+            
+        } 
+
+
+
+    }
+} 
