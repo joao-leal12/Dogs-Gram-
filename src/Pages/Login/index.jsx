@@ -4,23 +4,25 @@ import {LoginCreate} from '../../Components/Form/LoginCreate'
 import {LoginPasswordLost} from '../../Components/Form/LoginPasswordLost'
 import {LoginPasswordReset} from '../../Components/Form/LoginPasswordReset'
 import { Routes, Route, Navigate } from 'react-router-dom'; 
-import {Global} from '../../GlobalContext/useContext'
+import {Global} from '../../GlobalContext/useContext' 
+import { Section, FormsContainer } from './styles'
 export const Login = () => {
   const {login} = useContext(Global); 
 
    
   if(login) return <Navigate to="/conta"/>
   return (
-    <div>
-     
-      <Routes>
-       
-        <Route path="/" element={<LoginForm/>}/>
-        <Route path="criar" element={<LoginCreate/> }/>  
-        <Route path="perdeu" element={<LoginPasswordLost/> }/> 
-        <Route path="resetar" element={<LoginPasswordReset/> }/>  
-    
-      </Routes>
-    </div>
+    <Section>
+      <FormsContainer>
+        <Routes>
+        
+          <Route path="/" element={<LoginForm/>}/>
+          <Route path="criar" element={<LoginCreate/> }/>  
+          <Route path="perdeu" element={<LoginPasswordLost/> }/> 
+          <Route path="resetar" element={<LoginPasswordReset/> }/>  
+      
+        </Routes>
+      </FormsContainer>
+    </Section>
   )
 }

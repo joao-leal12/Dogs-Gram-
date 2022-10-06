@@ -66,8 +66,7 @@ export const GlobalContext = ({children}) => {
 
             setError(erro.message);  
             setLogin(false);  
-            navigate('/error')
- 
+           
         } finally {       
             
             setLoading(false)
