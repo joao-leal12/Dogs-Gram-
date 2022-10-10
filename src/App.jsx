@@ -14,6 +14,7 @@ export const App = () => {
       <BrowserRouter>
       
         <GlobalContext>
+         
           <Header/> 
           <Routess/> 
           <Footer/> 

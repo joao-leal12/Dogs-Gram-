@@ -89,19 +89,17 @@ export const GlobalContext = ({children}) => {
                   const response = await fetch(url, options )
                   if(!response.ok) throw new Error('Token Invalido'); 
                   await getUser(token)
-                
-               
-                  setLogin(data); 
-              }catch(erro){  
-
-                    userLogout()
+                }catch(erro){  
+                   userLogout()
 
                  }finally{ 
 
-                setLoading(false); 
-                 
-              }
-            }
+                    setLoading(false); 
+                    
+                }
+                }else{ 
+                setLogin(false); 
+                }
              
         }
         autoLogin()
