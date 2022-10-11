@@ -6,7 +6,7 @@ import { Global } from '../../GlobalContext/useContext';
 
 export  const Header = () => {
 
-  const {data, userLogout} = useContext(Global);  
+  const {data} = useContext(Global);  
 
   return (
     <HeaderContainer>
@@ -22,7 +22,7 @@ export  const Header = () => {
               <Link to="/login" className="login"> 
 
                 {data.nome}
-              <button onClick={userLogout }>Sair</button>
+
               </Link> 
               
 
