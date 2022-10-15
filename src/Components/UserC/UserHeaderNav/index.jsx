@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Nav, Mobilebutton, NavMobile} from './styles'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import {Global} from '../../../GlobalContext/useContext' 
 import {ReactComponent as Fotos} from '../../../assets/feed.svg' 
 import {ReactComponent as Estatisticas} from '../../../assets/estatisticas.svg'
@@ -14,6 +14,13 @@ export const UserHeaderNav = () => {
     const mobile = UseMedia('(max-width: 64rem)') 
     const [mobileMenu, setmobileMenu] = useState(false);  
 
+    const path = useLocation(); 
+
+    useEffect(() => { 
+
+        setmobileMenu(false); 
+
+    }, [path])
     
   return ( 
 
