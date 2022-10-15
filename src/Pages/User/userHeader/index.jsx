@@ -7,7 +7,7 @@ export const UserHeader = () => {
  const location = useLocation()
   
  React.useEffect(()=> {
-    setTitle(location.pathname); 
+   
     switch(location.pathname){
 
       case '/conta/estatisticas': 
@@ -32,9 +32,9 @@ export const UserHeader = () => {
  }, [location])
   return (
     <Header>
-    
         <h1 className="title">{title}</h1>
         <UserHeaderNav/> 
     </Header>
   )
 }
+

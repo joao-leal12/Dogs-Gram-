@@ -11,12 +11,12 @@ export const App = () => {
   return ( 
     <div> 
       <GlobalStyles/> 
-      <BrowserRouter>
-      
+       <BrowserRouter>
         <GlobalContext>
-         
           <Header/> 
+         
           <Routess/> 
+         
           <Footer/> 
         
        </GlobalContext>
