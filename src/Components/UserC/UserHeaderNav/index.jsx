@@ -57,7 +57,7 @@ export const UserHeaderNav = () => {
         <NavMobile  
         
             transform={`${mobileMenu ? 'translateX(initial)': 'translateX(-10px)'}`} 
-            pointerEvents={`${mobileMenu ? 'none': 'initial'}`} 
+            pointerEvents={`${mobileMenu ? 'initial': 'none'}`} 
             opacity={`${mobileMenu ? '1': '0'}`} 
         
         >
