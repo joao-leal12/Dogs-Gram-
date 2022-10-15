@@ -9,9 +9,7 @@ export const Nav = styled.nav`
         transform: translateX(initial); 
         gap: 1.6rem; 
         opacity: 0; 
-        pointer-events: none;
-        transform: translateX(-10px); 
-        transition: 300ms; 
+       
         a,
         button{ 
 
@@ -83,11 +81,13 @@ export const NavMobile = styled.nav`
     background: white; 
     box-shadow: 0 1px 2px rgba(0,0,0,.2); 
     border-radius: 0.32rem; 
-   transform: translateX(initial);  
-   transition: 300ms; 
-        opacity: 1; 
-        z-index: 1000; 
-    a,button{ 
+    transition: 300ms; 
+    z-index: 1000;          
+    opacity: ${(props) => props.opacity}; 
+    transform: ${(props) => props.transform}; 
+    pointer-events: ${(props)=> props.pointerEvents}; 
+     
+    a,button{  
 
         display: flex;
         align-items: center;

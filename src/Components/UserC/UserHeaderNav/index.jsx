@@ -54,7 +54,13 @@ export const UserHeaderNav = () => {
         </button>
     </Nav>) : ( 
 
-        <NavMobile className="navMobileActive ">
+        <NavMobile  
+        
+            transform={`${mobileMenu ? 'translateX(initial)': 'translateX(-10px)'}`} 
+            pointerEvents={`${mobileMenu ? 'none': 'initial'}`} 
+            opacity={`${mobileMenu ? '1': '0'}`} 
+        
+        >
 
             <NavLink to="/conta"  end activeClassName={`active`}> 
                 <Fotos/>
