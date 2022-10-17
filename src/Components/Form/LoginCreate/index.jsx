@@ -15,7 +15,7 @@ export const LoginCreate = () => {
 
     const {userLogin } = useContext(Global)
     const {loading, error, request} = UseFetch(); 
-    console.log(error); 
+
   async function handleSubmit(e){ 
       e.preventDefault();  
 

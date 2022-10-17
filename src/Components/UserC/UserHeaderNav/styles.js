@@ -8,7 +8,7 @@ export const Nav = styled.nav`
         grid-template-columns: repeat(4, 1fr);  
         transform: translateX(initial); 
         gap: 1.6rem; 
-        opacity: 0; 
+        opacity: 1; 
        
         a,
         button{ 

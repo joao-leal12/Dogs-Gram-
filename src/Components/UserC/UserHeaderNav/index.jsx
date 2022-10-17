@@ -13,7 +13,6 @@ export const UserHeaderNav = () => {
     const {userLogout} = useContext(Global); 
     const mobile = UseMedia('(max-width: 64rem)') 
     const [mobileMenu, setmobileMenu] = useState(false);  
-
     const path = useLocation(); 
 
     useEffect(() => { 
@@ -43,15 +42,15 @@ export const UserHeaderNav = () => {
         
     
    { !mobile ? (<Nav>
-        <NavLink to="/conta" end activeClassName={`active`}> 
+        <NavLink to="/conta" end activeclassname={`active`}> 
             <Fotos/>
             {mobile && 'Minhas Fotos'}
         </NavLink>
-        <NavLink to="/conta/estatisticas" activeClassName={`active`}>
+        <NavLink to="/conta/estatisticas" activeclassname={`active`}>
                 <Estatisticas/> 
             {mobile && 'Estatisticas'}    
         </NavLink> 
-        <NavLink to="/conta/postar" activeClassName={`active`}>
+        <NavLink to="/conta/postar" activeclassname={`active`}>
             <AdicionarFotos/>
             {mobile && 'Adicionar Fotos'}
         </NavLink> 
@@ -69,15 +68,15 @@ export const UserHeaderNav = () => {
         
         >
 
-            <NavLink to="/conta"  end activeClassName={`active`}> 
+            <NavLink to="/conta"  end activeclassname={`active`}> 
                 <Fotos/>
                 {mobile && 'Minhas Fotos'}
             </NavLink>
-            <NavLink to="/conta/estatisticas"  activeClassName={`active`}>
+            <NavLink to="/conta/estatisticas"  activeclassname={`active`}>
                     <Estatisticas/> 
                 {mobile && 'Estatisticas'}    
             </NavLink> 
-            <NavLink to="/conta/postar" activeClassName={`active`}>
+            <NavLink to="/conta/postar" activeclassname={`active`}>
                 <AdicionarFotos/>
                 {mobile && 'Adicionar Fotos'}
             </NavLink> 
