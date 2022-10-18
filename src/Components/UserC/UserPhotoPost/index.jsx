@@ -1,20 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { PostContainer, Background} from './styles'
 import {Input} from '../../Forms/Input' 
 import {Button} from '../../Forms/Button';
 import {UseForm} from '../../../Hooks/UseForm';  
 import {UseFetch} from '../../../Hooks/UseFetch';  
 import { PHOTO_POST } from '../../../Api/api';
+import {Erro} from '../../Helper/Erro'; 
+import { useNavigate } from 'react-router-dom';
 export const UserPhotoPost  = () => {
   const nome = UseForm(); 
   const peso = UseForm('number'); 
   const idade = UseForm('number');  
   const [img, setImg] = useState({});  
 
+
   
   const {data, error, loading, request} = UseFetch(); 
+  const navigate = useNavigate()
+  
+  useEffect(()=> { 
+
+      if(data) navigate('/conta'); 
 
 
+  }, [data, navigate])
+
+
+  function handleImgChange(e){ 
+    console.log(e.target); 
+   setImg({ 
+        preview: URL.createObjectURL(e.target.files[0]),  
+        raw: e.target.files[0], 
+
+     })  
+     console.log(img); 
+    } 
+
+  
   function handleSubmit(e){ 
     e.preventDefault(); 
     const formData = new FormData(); 
@@ -27,19 +49,9 @@ export const UserPhotoPost  = () => {
     const token = window.localStorage.getItem('token'); 
     
     const {url, options} = PHOTO_POST(formData,token )
-
+    request(url, options); 
   } 
 
-  function handleImgChange(e){ 
-      console.log(e);   
-   setImg({ 
-        preview: URL.createObjectURL(e.target.files[0]),  
-        raw: e.target.files[0], 
-
-     })  
-
-     
-  }
 
   
   return (
@@ -50,7 +62,7 @@ export const UserPhotoPost  = () => {
           <Input label="nome" type="text" name="nome" {...nome}/> 
           <Input label="peso" type="number" name="peso" {...peso}/>
           <Input label="idade " type="number" name="idade"{...idade}/> 
-          <Input 
+          <input 
             
             id="img" 
             type="file" 
@@ -58,7 +70,12 @@ export const UserPhotoPost  = () => {
             onChange={handleImgChange}
             
             />
-          <Button>Enviar</Button> 
+          {loading ? 
+         
+         (<Button disabled>Enviando...</Button>)
+           : ( <Button>Enviar</Button>)  } 
+
+            <Erro error={error}/>
        </form> 
        <div>
 

@@ -141,4 +141,10 @@ export const GlobalStyles = createGlobalStyle`
     }
 
 
+    .mainContainer{ 
+
+        margin-top: 6.4rem;  
+         
+    }
+
 `

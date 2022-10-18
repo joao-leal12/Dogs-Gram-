@@ -30,8 +30,6 @@ export const Background = styled.div`
         display:block; 
         height: 0; 
         padding-bottom: 100%; 
-        border: 1px solid red; 
-
 
     }
 

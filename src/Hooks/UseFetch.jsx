@@ -22,7 +22,7 @@ export const UseFetch = () => {
             }
 
         }catch(err){ 
-            json(null) 
+            json = null; 
             
             setError(err.message)
  
