@@ -8,7 +8,7 @@ import {Loading} from '../../Helper/Loading';
 import { ListPhotos } from './styles';
 export const FeedPhotos = ({setModalPhoto}) => {
   const {data, loading, error, request} = UseFetch(); 
-  console.log(data); 
+ ; 
     useEffect(() => { 
 
         async function fetchPhotos() { 

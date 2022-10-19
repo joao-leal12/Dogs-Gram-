@@ -1,38 +1,50 @@
 import React from 'react'
-import {ContentPhoto, ContainerImg, ContainerDetails} from './styles'; 
+import {ContentPhoto,
+    
+    ContainerImg, 
+     ContainerDetails, 
+     Details, 
+     Visualization, 
+     Title, 
+     Atributes,
+     Author
+    } from './styles';  
+import { PhotoComments } from '../PhotoComments';
 import { Link } from 'react-router-dom';
 export const PhotoContent = ({data}) => {
-    const {photo, comment} = data; 
+    const {photo, comments} = data;  
     return (
     <ContentPhoto>
      
         <ContainerImg> 
 
-            <img src={photo.src}/>  
+            <img src={photo.src} alt={photo.title}/>  
 
 
         </ContainerImg>
         <ContainerDetails>
-            <div>
-                <p>
+            <Details>
+                <Author>
+                   
                     <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link> 
 
-                </p>
-                <span className="visualizações">{photo.acessos}</span>
-                <h1 className="title">
+                </Author>
+                <Visualization className="visualizações">{photo.acessos}</Visualization>
+                <Title className="title">
 
-                    <Link to={`/foto/${photo.id}`}></Link>
+                    <Link to={`/foto/${photo.id}`}>{photo.title}</Link>
 
-                </h1> 
-                <ul className='atributes'>
+                </Title> 
+                <Atributes>
 
                     <li>{photo.peso} kg</li> 
                     <li>{photo.idade} anos</li>
-                </ul>
+                </Atributes>
                 
-            </div>
+            </Details>
 
-        </ContainerDetails> 
+        </ContainerDetails>  
+        <PhotoComments id={photo.id} comments={comments}/>  
     </ContentPhoto>
   )
 }

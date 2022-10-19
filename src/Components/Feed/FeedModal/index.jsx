@@ -5,17 +5,26 @@ import { PHOTO_GET } from '../../../Api/api';
 import { Erro } from '../../Helper/Erro'; 
 import { Loading } from '../../Helper/Loading'; 
 import { PhotoContent } from '../../Photo/PhotoContent';
-export const FeedModal = ({photo}) => {
+export const FeedModal = ({photo, setModalPhoto}) => {
   const {data, error, loading, request } = UseFetch(); 
-      console.log(data); 
+  
     useEffect(() => { 
 
         const {url, options} = PHOTO_GET(photo.id); 
         request(url, options )
     }, [photo, request]) 
 
+
+    function handleOutSideClick(e){ 
+
+      if(e.target == e.currentTarget){ 
+
+          setModalPhoto(null)
+      }
+
+    }
   return (
-    <ModalContainer>
+    <ModalContainer onClick={handleOutSideClick}>
         {error && <Erro error={error}/>}
         {loading && <Loading/>}
         {data && <PhotoContent data={data}/> }

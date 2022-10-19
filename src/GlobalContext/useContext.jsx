@@ -40,9 +40,6 @@ export const GlobalContext = ({children}) => {
         setData(dataFetch); 
         setLogin(true); 
 
-
-
-
     }
  
     async function userLogin(username, password){  
@@ -98,7 +95,7 @@ export const GlobalContext = ({children}) => {
                     
                 }
                 }else{ 
-                setLogin(false); 
+                    setLogin(false); 
                 }
              
         }
