@@ -24,7 +24,7 @@ export const ChildListPhotos = styled.li`
         }
 
 
-        img, span{ 
+        div,span{ 
             grid-area: 1/1;
         }
 

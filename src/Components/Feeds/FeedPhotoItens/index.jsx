@@ -1,5 +1,6 @@
 import React from 'react'
 import {ChildListPhotos} from './styles'; 
+import {Image} from '../../Helper/Image'; 
 export const FeedPhotosItens = ({photo, setModalPhoto }) => {
   function handleClick() { 
 
@@ -9,7 +10,7 @@ export const FeedPhotosItens = ({photo, setModalPhoto }) => {
   return (
     <ChildListPhotos onClick={handleClick}>
       
-      <img src={photo.src} alt={photo.title}/> 
+      <Image src={photo.src} alt={photo.title}/> 
       <span>{photo.acessos}</span>
 
     </ChildListPhotos>

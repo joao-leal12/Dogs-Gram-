@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {ContentPhoto,
     
     ContainerImg, 
@@ -11,23 +11,33 @@ import {ContentPhoto,
     } from './styles';  
 import { PhotoComments } from '../PhotoComments';
 import { Link } from 'react-router-dom';
+import { Global } from '../../../GlobalContext/useContext';
+import { PhotoDelete } from '../PhotoDelete'; 
+import { Image } from '../../Helper/Image';
 export const PhotoContent = ({data}) => {
-    const {photo, comments} = data;  
+    const {photo, comments} = data;    
+    const user = useContext(Global); 
+
+  
+
+
     return (
     <ContentPhoto>
      
         <ContainerImg> 
-
-            <img src={photo.src} alt={photo.title}/>  
+           
+            <Image src={photo.src} alt={photo.title}/> 
+           
 
 
         </ContainerImg>
         <ContainerDetails>
             <Details>
                 <Author>
-                   
-                    <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link> 
-
+                    {user.data && user.data.username == photo.author ? (<PhotoDelete id={photo.id}/>) : 
+                    (
+                      <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link> 
+                    )}
                 </Author>
                 <Visualization className="visualizações">{photo.acessos}</Visualization>
                 <Title className="title">
