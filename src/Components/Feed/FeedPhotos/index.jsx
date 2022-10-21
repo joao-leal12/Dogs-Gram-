@@ -6,21 +6,27 @@ import { PHOTOS_GET } from '../../../Api/api';
 import {Erro} from '../../Helper/Erro'; 
 import {Loading} from '../../Helper/Loading';  
 import { ListPhotos } from './styles';
-export const FeedPhotos = ({setModalPhoto}) => {
+export const FeedPhotos = ({user, setModalPhoto, setInfinite}) => {
   const {data, loading, error, request} = UseFetch(); 
  ; 
     useEffect(() => { 
 
         async function fetchPhotos() { 
-          const {url , options} = PHOTOS_GET({page: 1,  total: 6, user: 0}); 
-           request(url, options)
+          const total = 3 ;  
+          const {url , options} = PHOTOS_GET({page: 1,  total: 3, user}); 
+            const {response, json} = request(url, options)
 
+            if(response && response.ok && json.length < total){ 
+
+                setInfinite(false); 
+
+            }
         
-        } 
+        }   
 
         fetchPhotos(); 
 
-    }, [request])
+    }, [request, user])
     if(error) return <Erro error={error}/> 
     if(loading) return <Loading/> 
     if(data)
