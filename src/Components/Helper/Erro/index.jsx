@@ -5,8 +5,7 @@ export const Erro = ({erro}) => {
     if(!erro) return null
     return (
         <Error>
-              {erro}
-        
+             {erro}
         </Error>
   )
 }

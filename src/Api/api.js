@@ -184,4 +184,17 @@ export function PHOTO_DELETE(id){
 
 
 
+export function PHOTO_GETTING_PAGE(id){ 
+
+
+    return { 
+
+        url: `${API_URL}/api/foto/${id}`, 
+       
+
+    }
+} 
+
+
+
 
