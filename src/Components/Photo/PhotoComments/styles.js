@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const CommentContainer = styled.ul` 
     overflow-y: auto; 
     word-break: break-word ; 
-    padding: 0.32rem; 
+    padding:${(props) => props.single ? "0 ": "0.32rem"};
 ` 
 
 export const CommentItem = styled.li` 

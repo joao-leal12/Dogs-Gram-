@@ -5,7 +5,7 @@ import {COMMENT_POST} from '../../../Api/api';
 import {Erro} from '../../Helper/Erro'
 
 import {ReactComponent as Enviar} from '../../../assets/enviar.svg' 
-export const PhotoCommentsForm = ({id, setComments}) => {
+export const PhotoCommentsForm = ({id, setComments, single}) => {
   const [comment, setComment] = useState(''); 
   const {request, error } = UseFetch();  
 
@@ -23,7 +23,7 @@ export const PhotoCommentsForm = ({id, setComments}) => {
     }
 
   return (
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} single={single}>
         
        <Textarea 
         value={comment} 

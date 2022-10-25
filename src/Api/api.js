@@ -189,9 +189,9 @@ export function PHOTO_GETTING_PAGE(id){
 
     return { 
 
-        url: `${API_URL}/api/foto/${id}`, 
+        url: `${API_URL}/api/photo/${id}`, 
        
-
+        
     }
 } 
 

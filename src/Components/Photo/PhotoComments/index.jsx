@@ -15,7 +15,7 @@ export const PhotoComments = (props) => {
 
   return (
     <>
-      <CommentContainer ref={commentSection}>
+      <CommentContainer ref={commentSection} single={props.single}> 
         {comments.map(comment => ( 
        
           <CommentItem key={comment.comment_ID}>
@@ -27,7 +27,7 @@ export const PhotoComments = (props) => {
 
         ))}
       </CommentContainer>
-      {login && <PhotoCommentsForm id={props.id} setComments={setComments}/> }
+      {login && <PhotoCommentsForm single={props.single} id={props.id} setComments={setComments}/> }
     </>
   )
 }

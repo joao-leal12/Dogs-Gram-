@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import {ContentPhoto,
     
     ContainerImg, 
@@ -14,17 +14,17 @@ import { Link } from 'react-router-dom';
 import { Global } from '../../../GlobalContext/useContext';
 import { PhotoDelete } from '../PhotoDelete'; 
 import { Image } from '../../Helper/Image';
-export const PhotoContent = ({data}) => {
+export const PhotoContent = ({data, single}) => {
     const {photo, comments} = data;    
     const user = useContext(Global); 
-
+    
   
 
 
     return (
-    <ContentPhoto>
+    <ContentPhoto single={single}>
      
-        <ContainerImg> 
+        <ContainerImg single={single}> 
            
             <Image src={photo.src} alt={photo.title}/> 
            
@@ -54,7 +54,7 @@ export const PhotoContent = ({data}) => {
             </Details>
 
         </ContainerDetails>  
-        <PhotoComments id={photo.id} comments={comments}/>  
+        <PhotoComments single={single} id={photo.id} comments={comments}/>  
     </ContentPhoto>
   )
 }

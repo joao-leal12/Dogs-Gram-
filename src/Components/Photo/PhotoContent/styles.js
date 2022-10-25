@@ -4,11 +4,12 @@ import styled from "styled-components";
 export const ContentPhoto = styled.div` 
 
     margin: auto; 
-    height: 57rem; 
+    height:  ${(props) => props.single ? "auto": "57rem"}; 
     border-radius: .4rem ; 
     background: #fff; 
     display: grid; 
-    grid-template-columns: 57rem 32rem; 
+    grid-template-columns:  ${(props) => !props.single ? "57rem 32rem": "1fr"};  
+    
     grid-template-rows: auto 1fr auto; 
     overflow : hidden; 
     opacity: 0;
@@ -39,8 +40,9 @@ export const ContentPhoto = styled.div`
 
 export const ContainerImg = styled.div` 
 
-    grid-row: 1/4; 
-
+    grid-row: ${((props) => props.single ? "1" : '1/4')} ; 
+    border-radius: ${((props) => props.single ? "0.42rem" : "0")};  
+    overflow: ${((props) => props.single ? "hidden" : "auto")};  
     @media (max-width: 64rem){ 
 
         grid-row: 1; 
@@ -71,9 +73,9 @@ export const Author = styled.p`
 ` 
 
 export const ContainerDetails = styled.div`
-     padding: 3.2rem 3.2rem 0 3.2rem; 
+     padding: ${(props) => !props.single ? "3.2rem 3.2rem 0 3.2rem ": "1.6rem 0px 0px 0px"}; 
 
-
+ 
 ` 
 
 
