@@ -197,4 +197,25 @@ export function PHOTO_GETTING_PAGE(id){
 
 
 
+export function LOST__PASSWORD(body) { 
 
+
+    return { 
+
+        url: API_URL + '/api/password/lost',  
+
+        options: { 
+
+            method: 'POST', 
+            headers: { 
+
+                'Content-type': 'application/json' 
+
+            }, 
+            body: JSON.stringify(body) 
+        }
+
+    }
+
+
+}

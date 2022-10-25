@@ -13,7 +13,7 @@ export const FeedPhotos = ({user, setModalPhoto, setInfinite}) => {
 
         async function fetchPhotos() { 
           const total = 3 ;  
-          const {url , options} = PHOTOS_GET({page: 1,  total: 3, user}); 
+          const {url , options} = PHOTOS_GET({page: 1,  total, user}); 
             const {response, json} = request(url, options)
 
             if(response && response.ok && json.length < total){ 
