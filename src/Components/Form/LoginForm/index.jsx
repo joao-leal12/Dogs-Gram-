@@ -5,7 +5,8 @@ import {Button} from '../../Forms/Button';
 import { UseForm } from '../../../Hooks/UseForm';
 import {Global} from '../../../GlobalContext/useContext'; 
 import {Erro} from '../../Helper/Erro';  
-import { Formu, Section, Cadastro } from './styles';
+import { Formu, Section, Cadastro } from './styles'; 
+import {Head} from '../../Helper/Head'; 
 export const LoginForm = () => {
 
   
@@ -26,6 +27,7 @@ export const LoginForm = () => {
   }
   return ( 
     <Section className="animeLeft">
+      <Head title="Login"/>
       <h1 className="title ">Login</h1>
       <Formu onSubmit={handleSubmit}>
           <Input 

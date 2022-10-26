@@ -3,11 +3,11 @@ import {Section, Title} from './styles';
 import {Input} from '../../Forms/Input'; 
 import {Button} from '../../Forms/Button'; 
 import {UseForm} from '../../../Hooks/UseForm'
-import { LOGIN_CREATE } from '../../../Api/api'; 
-import { Navigate } from 'react-router-dom'; 
+import { LOGIN_CREATE } from '../../../Api/api';  
 import { Global } from '../../../GlobalContext/useContext';
 import {UseFetch} from '../../../Hooks/UseFetch';  
 import {Erro} from '../../Helper/Erro' ; 
+import {Head} from '../../Helper/Head'; 
 export const LoginCreate = () => {
     const username = UseForm() 
     const email = UseForm('email') 
@@ -25,12 +25,14 @@ export const LoginCreate = () => {
         email: email.value
       })
       const {response} = await request(url, options) 
+  
       if(response.ok) userLogin(username.value, password.value)
       
     }
   
   return (
     <Section className="animeLeft">
+      <Head title="Crie sua conta"/>
       <Title className="title">Cadastre-se</Title> 
       <form onSubmit={handleSubmit}>
 

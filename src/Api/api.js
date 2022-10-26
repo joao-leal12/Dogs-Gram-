@@ -219,3 +219,29 @@ export function LOST__PASSWORD(body) {
 
 
 }
+
+
+
+
+export function RESET__PASSWORD(body) { 
+
+
+    return { 
+
+        url: API_URL + '/api/password/reset',  
+
+        options: { 
+
+            method: 'POST', 
+            headers: { 
+
+                'Content-type': 'application/json' 
+
+            }, 
+            body: JSON.stringify(body) 
+        }
+
+    }
+
+
+}

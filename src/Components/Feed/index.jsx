@@ -51,6 +51,8 @@ export const Feed = ({user}) => {
           user={user} 
           setModalPhoto={setModalPhoto} 
           setInfinite={setInfinite} 
+          page={page} 
+          key={page}
         
         /> ))}
 

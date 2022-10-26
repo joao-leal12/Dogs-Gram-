@@ -5,7 +5,8 @@ import { UseFetch } from '../../Hooks/UseFetch';
 import {Erro} from '../../Components/Helper/Erro'; 
 import {Loading} from '../../Components/Helper/Loading';      
 import {PhotoContent} from '../../Components/Photo/PhotoContent'; 
-import {ContainerPhotoContent} from './styles'
+import {ContainerPhotoContent} from './styles' 
+import {Head} from '../../Components/Helper/Head'; 
 export const PhotoPage = () => { 
 
     const {id} = useParams(); 
@@ -26,7 +27,7 @@ export const PhotoPage = () => {
     if(data)
     return (
     <ContainerPhotoContent className="mainContainer">
-    
+        <Head title={data.photo.title}/> 
         <PhotoContent single={true} data={data}/>  
      
     </ContainerPhotoContent>

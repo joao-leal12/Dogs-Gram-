@@ -6,7 +6,8 @@ import {UseForm} from '../../../Hooks/UseForm';
 import {UseFetch} from '../../../Hooks/UseFetch';  
 import { PHOTO_POST } from '../../../Api/api';
 import {Erro} from '../../Helper/Erro'; 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
+import {Head} from '../../../Components/Helper/Head'; 
 export const UserPhotoPost  = () => {
   const nome = UseForm(); 
   const peso = UseForm('number'); 
@@ -56,7 +57,7 @@ export const UserPhotoPost  = () => {
   
   return (
     <PostContainer className="animeLeft">
-    
+      <Head title="Poste a sua foto"/> 
        <form onSubmit={handleSubmit}>
 
           <Input label="nome" type="text" name="nome" {...nome}/> 

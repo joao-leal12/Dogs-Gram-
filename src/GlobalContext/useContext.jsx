@@ -48,7 +48,6 @@ export const GlobalContext = ({children}) => {
             setLoading(true) 
             const {url, options } = TOKEN_POST({username, password}) 
             const tokenRes = await fetch(url, options) 
-            console.log(tokenRes); 
             if(!tokenRes.ok){  
                 
                 throw new Error(`Error: Usuario não encontrado `)
