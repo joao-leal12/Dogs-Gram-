@@ -48,7 +48,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
 
-    button{ 
+    button, input{ 
         display: block; 
         font-size: 1.6rem;  
         color: #333; 
@@ -56,13 +56,13 @@ export const GlobalStyles = createGlobalStyle`
     }
 
 
-    main,
+    
     section,
     nav{ 
 
         max-width: 128rem; 
         padding: 0 1rem; 
-        margin: 0 auto; 
+        margin: 0 auto;  
     }
 
     a{ 
@@ -146,5 +146,11 @@ export const GlobalStyles = createGlobalStyle`
         margin-top: 6.4rem;  
          
     }
+
+
+    .VictoryContainer{ 
+        height: initial!important
+    }
+
 
 `

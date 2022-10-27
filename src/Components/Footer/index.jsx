@@ -1,10 +1,11 @@
 import React from 'react'
 import {StyleFooter} from './styles';
+import {ReactComponent as Dogs} from '../../assets/dogs-footer.svg'; 
 export const Footer = () => {
   return (
     <StyleFooter>
-      
-        <h1>Footer</h1>
+      <Dogs /> 
+      <p>Dogs. alguns direitos reservados</p>
 
     </StyleFooter>
   )

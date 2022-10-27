@@ -15,6 +15,12 @@ export const PostContainer = styled.section`
     }
 
 
+  @media (max-width: 64rem) { 
+
+    grid-template-columns: 1fr; 
+
+  }
+
 `
 
 export const Background = styled.div`

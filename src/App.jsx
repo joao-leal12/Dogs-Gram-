@@ -5,22 +5,22 @@ import {Footer} from './Components/Footer';
 import {Routess} from './Components/Routes'; 
 import { GlobalStyles } from './GlobalStyles/GlobalStyles'; 
 import {GlobalContext } from './GlobalContext/useContext';
+import { Apps, AppBody } from './styles';
 export const App = () => {
      
 
   return ( 
-    <div> 
+    <Apps> 
       <GlobalStyles/> 
        <BrowserRouter>
         <GlobalContext>
           <Header/> 
-         
-          <Routess/> 
-         
+          <AppBody>
+             <Routess/> 
+          </AppBody>
           <Footer/> 
-        
        </GlobalContext>
       </BrowserRouter>
-    </div>
+    </Apps>
   )
 }
