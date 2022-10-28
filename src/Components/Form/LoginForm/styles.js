@@ -44,7 +44,7 @@ export const Formu = styled.form`
 export const Cadastro = styled.div`
 
     margin-top: 6.4rem; 
-    margin-bottom: 6.4rem;  
+    margin-bottom: 6.4rem;      
 
     p{ 
     

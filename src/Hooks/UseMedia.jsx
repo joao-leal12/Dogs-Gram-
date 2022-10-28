@@ -13,9 +13,11 @@ export const UseMedia = (media) => {
         }
 
         window.addEventListener('resize', changeMatches); 
-
+        changeMatches(); 
         return () => {
             window.removeEventListener('resize', changeMatches); 
+            
+            
         }
 
     }, [media])

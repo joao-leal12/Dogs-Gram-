@@ -1,4 +1,4 @@
-import styled from 'styled-components'; 
+ import styled from 'styled-components'; 
 
 
 export const Nav = styled.nav`
@@ -16,6 +16,7 @@ export const Nav = styled.nav`
         background: #eee; 
         border-radius: 0.32rem; 
         height: 40px; 
+        width: 40px; 
         display:flex; 
         align-items: center;
         justify-content: center;

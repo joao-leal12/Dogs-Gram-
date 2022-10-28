@@ -10,9 +10,9 @@ export  const Header = () => {
 
   return (
     <HeaderContainer>
-      <nav> 
+      <nav className="container"> 
        
-          <Link  to="/" aria-label="Dogs - Home">
+          <Link  to="/" aria-label="Dogs - Home" class="logo">
           
             <img src={MyDogs}/> 
 
@@ -29,11 +29,11 @@ export  const Header = () => {
 
           ): ( 
 
-            <Link to="/login" className="login"> 
+        <Link to="/login" className="login"> 
 
-            Login / Criar 
+              Login / Criar 
           
-          </Link>
+        </Link>
 
           )}
          

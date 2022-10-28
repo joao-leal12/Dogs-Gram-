@@ -30,7 +30,7 @@ export const GlobalStyles = createGlobalStyle`
         color: #333; 
         font-family: var(--type-first); 
         font-size: 1.6rem; 
-        padding-top: 4rem; 
+        padding-top: 6.4rem; 
     }
  
 
@@ -57,12 +57,18 @@ export const GlobalStyles = createGlobalStyle`
 
 
     
-    section,
-    nav{ 
+    .container 
+    { 
 
-        max-width: 128rem; 
-        padding: 0 1rem; 
+        max-width: 80rem; 
+        padding: 0 1.6rem; 
         margin: 0 auto;  
+    }
+
+    .mainContainer{ 
+
+        margin-top: 6.4rem; 
+             
     }
 
     a{ 

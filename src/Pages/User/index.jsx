@@ -13,7 +13,7 @@ export const User = () => {
   const {data} = useContext(Global);
   
   return ( 
-    <Container>
+    <Container className="container">
       <Head title="Minha Conta"/>
       <UserHeader/>  
       <Routes> 

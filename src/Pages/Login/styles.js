@@ -33,9 +33,15 @@ export const Section = styled.section`
 
 export const FormsContainer = styled.div` 
 
-    max-width: 30rem; 
-    padding: 1.6rem; 
+    max-width: 48rem; 
+    padding: 3.2rem; 
     margin-top: 20vh; 
 
+
+    @media (max-width: 64rem) { 
+
+        max-width: 100%; 
+
+    }
 
 ` 

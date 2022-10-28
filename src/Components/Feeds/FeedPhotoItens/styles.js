@@ -1,4 +1,4 @@
-import styled from "styled-components"; 
+ import styled from "styled-components"; 
 
 
 export const ChildListPhotos = styled.li`
@@ -6,7 +6,7 @@ export const ChildListPhotos = styled.li`
         display: grid; 
         border-radius: .4rem; 
         overflow: hidden; 
-
+        cursor: pointer;    
 
         &:nth-child(2){ 
             grid-column: 2/4; 
